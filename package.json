@@ -1,7 +1,7 @@
 {
   "name": "stockpricewidget",
   "version": "0.1.0",
-  "homepage": "https://maksymchukhrai.github.io/Stock-Price-Widget/",
+  "homepage": "https://maksymchukhrai.github.io/Dashboard-Widget/",
 
   "private": true,
   "dependencies": {
