@@ -5,7 +5,7 @@ function MicrosoftGraph() {
   return (
     <div>
       {/* Код для графика Microsoft */}
-      <p>Apple Graph</p>
+      <p>Apple Graph123456</p>
     </div>
   );
 }
