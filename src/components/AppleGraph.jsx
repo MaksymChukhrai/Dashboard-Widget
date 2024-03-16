@@ -1,42 +1,76 @@
 // src\components\AppleGraph.jsx
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+
 import React from 'react';
-import { Chart } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Filler,
+  Legend,
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 import stockData from '../data/stock_mkt_time_data.json'; 
 
-const AppleGraph = ({ data }) => {
-  const { times, prices } = stockData.Apple;
-  console.log(times, prices);
-  const chartData = {
-    labels: times.map((time) => new Date(time * 1000).toLocaleString()),
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Filler,
+  Legend
+);
+// Формирование массива меток для оси X (время)
+const labels = stockData.Apple.times.map((time) => new Date(time * 1000).toLocaleString());
+
+
+  const data = {
+    labels,
     datasets: [
       {
+        fill: true,
         label: 'Apple Stock Prices',
-        data: prices,
-        fill: false,
-        backgroundColor: 'rgba(75,192,192,0.2)',
-        borderColor: 'rgba(75,192,192,1)',
+        data: stockData.Apple.prices,
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
     ],
   };
-
-  const chartOptions = {
+  
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Apple Stock Prices',
+      },
+    },
     scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Time',
+        },
+      },
       y: {
-        type: 'linear',
-        ticks: {
-          beginAtZero: true,
+        title: {
+          display: true,
+          text: 'Price',
         },
       },
     },
   };
-
-  return (
-    <div>
-      <Chart type="line" data={chartData} options={chartOptions} />
-    </div>
-  );
-};
-
-export default AppleGraph;
+  
+ const AppleGraph= ()=> {
+    return <Line options={options} data={data} />;
+  }
+  export default AppleGraph;
