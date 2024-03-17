@@ -1,6 +1,6 @@
 //src\components\NvidiaGraph.jsx
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -26,6 +26,8 @@ ChartJS.register(
   Filler,
   Legend
 );
+
+const NvidiaGraph= ()=> {
 // Формирование массива меток для оси X (время)
 const labels = stockData.Nvidia.times.map((time) => new Date(time * 1000).toLocaleString());
 
@@ -68,9 +70,28 @@ const labels = stockData.Nvidia.times.map((time) => new Date(time * 1000).toLoca
         },
       },
     },
-  };
   
- const NvidiaGraph= ()=> {
-    return <Line options={options} data={data} />;
+  };
+      // Состояния для текущей цены и процентного изменения
+      const [currentPrice, setCurrentPrice] = useState(0);
+      const [percentageChange, setPercentageChange] = useState(0);
+    
+      useEffect(() => {
+        // Вычисление текущей цены и процентного изменения
+        const latestPrice = stockData.Nvidia.prices[stockData.Nvidia.prices.length - 1];
+        const openPrice = stockData.Nvidia.prices[0];
+        setCurrentPrice(latestPrice);
+        setPercentageChange(((latestPrice - openPrice) / openPrice) * 100);
+      }, []);
+
+      return (
+        <div>
+          <Line options={options} data={data} />
+          <ul>
+            <li>Current price: ${currentPrice}</li>
+            <li>Percentage change: {percentageChange.toFixed(2)}%</li>
+          </ul>
+        </div>
+      );
   }
   export default NvidiaGraph;

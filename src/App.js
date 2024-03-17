@@ -1,5 +1,5 @@
 //src\App.js
-import './App.css';
+
 import MicrosoftGraph from './components/MicrosoftGraph';
 import AppleGraph from './components/AppleGraph';
 import NvidiaGraph from './components/NvidiaGraph';
@@ -12,10 +12,14 @@ function App() {
       <h2>Financial Dashboard Widget with US Stock </h2>
       </header>
       <main>
+        <div className='graphics-container'>
+          <div className='wrapper-container'>
         <MicrosoftGraph />
         <AppleGraph />
+         </div>
         <NvidiaGraph />
-      </main>
+        </div> 
+             </main>
       <footer>
         {/* Код для подвала, если нужен */}
       </footer>
