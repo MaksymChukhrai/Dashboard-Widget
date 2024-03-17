@@ -31,7 +31,16 @@ ChartJS.register(
 
 const MicrosoftGraph= ()=> {
 // Формирование массива меток для оси X (время)
-const labels = stockData.Microsoft.times.map((time) => new Date(time * 1000).toLocaleString());
+const labels = stockData.Apple.times.map((time) => {
+  const date = new Date(time * 1000);
+  const hours = date.getHours().toString().padStart(2, '0'); // Добавляем ведущий ноль, если число меньше 10
+  const minutes = date.getMinutes().toString().padStart(2, '0'); // Добавляем ведущий ноль, если число минут меньше 10
+  return `${hours}:${minutes}`;
+});
+const currentDate = new Date();
+const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(currentDate.getMonth() + 1).toString().padStart(2, '0')}.${currentDate.getFullYear()}`;
+
+
 
 
   const data = {
@@ -39,7 +48,7 @@ const labels = stockData.Microsoft.times.map((time) => new Date(time * 1000).toL
     datasets: [
       {
         fill: true,
-        label: 'Microsoft Stock Prices',
+        label: `Date: ${formattedDate}`,
         data: stockData.Microsoft.prices,
         borderColor: 'rgb(50, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',

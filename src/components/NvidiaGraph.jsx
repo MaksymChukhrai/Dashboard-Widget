@@ -29,15 +29,21 @@ ChartJS.register(
 
 const NvidiaGraph= ()=> {
 // Формирование массива меток для оси X (время)
-const labels = stockData.Nvidia.times.map((time) => new Date(time * 1000).toLocaleString());
-
+const labels = stockData.Apple.times.map((time) => {
+  const date = new Date(time * 1000);
+  const hours = date.getHours().toString().padStart(2, '0'); // Добавляем ведущий ноль, если число меньше 10
+  const minutes = date.getMinutes().toString().padStart(2, '0'); // Добавляем ведущий ноль, если число минут меньше 10
+  return `${hours}:${minutes}`;
+});
+const currentDate = new Date();
+const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(currentDate.getMonth() + 1).toString().padStart(2, '0')}.${currentDate.getFullYear()}`;
 
   const data = {
     labels,
     datasets: [
       {
         fill: true,
-        label: 'Nvidia Stock Prices',
+        label: `Date: ${formattedDate}`,
         data: stockData.Nvidia.prices,
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
@@ -53,7 +59,7 @@ const labels = stockData.Nvidia.times.map((time) => new Date(time * 1000).toLoca
       },
       title: {
         display: true,
-        text: 'Nvidia Stock Prices',
+        text: `Nvidia Stock Prices`,
       },
     },
     scales: {

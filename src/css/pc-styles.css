@@ -4,7 +4,7 @@ max-width: 1200px;
 margin: 0 auto; 
 }
 .graphics-container{
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto; 
   }
       .wrapper-container{
@@ -13,7 +13,9 @@ margin: 0 auto;
         justify-content: center;
         gap: 50px;
       }
-
+.scroll-container{
+    width: 660px;
+}
 
 
 
