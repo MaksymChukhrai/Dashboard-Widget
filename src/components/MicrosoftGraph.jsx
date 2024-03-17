@@ -50,8 +50,8 @@ const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(c
         fill: true,
         label: `Date: ${formattedDate}`,
         data: stockData.Microsoft.prices,
-        borderColor: 'rgb(50, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        borderColor: '#786e79',
+        backgroundColor: '#ffff',
       },
     ],
   };
@@ -105,10 +105,10 @@ const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(c
     return (
       <div className='graf-container'>
         <Line options={options} data={data} />
-        <ul>
-          <li>Current price: ${currentPrice}</li>
-          <li>Percentage change: {percentageChange.toFixed(2)}%</li>
-        </ul>
+        <ul className='data-figures'>
+            <li>Current price<span className='price'>${currentPrice}</span> </li>
+            <li>Percentage change <span className='percent'>{percentageChange.toFixed(2)}%</span></li>
+          </ul>
       </div>
     );
 

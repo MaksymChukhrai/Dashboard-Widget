@@ -35,6 +35,7 @@ const labels = stockData.Apple.times.map((time) => {
   const minutes = date.getMinutes().toString().padStart(2, '0'); // Добавляем ведущий ноль, если число минут меньше 10
   return `${hours}:${minutes}`;
 });
+
 const currentDate = new Date();
 const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(currentDate.getMonth() + 1).toString().padStart(2, '0')}.${currentDate.getFullYear()}`;
 
@@ -45,8 +46,8 @@ const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(c
         fill: true,
         label: `Date: ${formattedDate}`,
         data: stockData.Nvidia.prices,
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        borderColor: '#83988f',
+        backgroundColor: '#ffff',
       },
     ],
   };
@@ -91,11 +92,11 @@ const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(c
       }, []);
 
       return (
-        <div>
+        <div className='graf-container'>
           <Line options={options} data={data} />
-          <ul>
-            <li>Current price: ${currentPrice}</li>
-            <li>Percentage change: {percentageChange.toFixed(2)}%</li>
+          <ul className='data-figures'>
+            <li>Current price <span className='price'>${currentPrice}</span> </li>
+            <li>Percentage change <span className='percent'>{percentageChange.toFixed(2)}%</span></li>
           </ul>
         </div>
       );
