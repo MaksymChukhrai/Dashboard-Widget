@@ -47,7 +47,7 @@ const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(c
         label: `Date: ${formattedDate}`,
         data: stockData.Nvidia.prices,
         borderColor: '#83988f',
-        backgroundColor: '#ffff',
+        backgroundColor: 'rgba(254, 249, 243, 0.5)',
       },
     ],
   };
@@ -92,7 +92,7 @@ const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(c
       }, []);
 
       return (
-        <div className='graf-container'>
+        <div className='graf-container nvidia'>
           <Line options={options} data={data} />
           <ul className='data-figures'>
             <li>Current price <span className='price'>${currentPrice}</span> </li>

@@ -51,7 +51,7 @@ const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(c
         label: `Date: ${formattedDate}`,
         data: stockData.Microsoft.prices,
         borderColor: '#786e79',
-        backgroundColor: '#ffff',
+        backgroundColor: 'rgba(254, 249, 243, 0.5)',
       },
     ],
   };

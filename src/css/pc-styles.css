@@ -16,7 +16,11 @@ margin: 0 auto;
 .scroll-container{
     width: 660px;
 }
-
+.nvidia{
+    margin-top: 50px;
+    margin-left: 15px;
+    margin-bottom: 50px;
+}
 
 
 
