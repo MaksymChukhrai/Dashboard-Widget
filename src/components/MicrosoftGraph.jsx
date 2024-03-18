@@ -81,7 +81,7 @@ const MicrosoftGraph = () => {
       },
     },
   };
-  // States for current price and percentage change
+  // States (useState and useEffect hooks) for current price and percentage change
   const [currentPrice, setCurrentPrice] = useState(0);
   const [percentageChange, setPercentageChange] = useState(0);
 
