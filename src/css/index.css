@@ -69,6 +69,8 @@ padding:10px;
   align-items: center;
   padding:6px 12px;
   background-color: #f2e0cc;
+  border-radius: 7px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
 }
 .price{
@@ -87,5 +89,9 @@ padding:10px;
   
 }
 
-
+.spinner{
+  position: absolute;
+    left: 45%;
+    top:55%;
+}
 
