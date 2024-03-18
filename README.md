@@ -66,9 +66,8 @@ To configure testing:
 - "@testing-library/user-event": "^13.5.0",
 
 Testing of the spinner functionality during data loading via the open API for IBM statistics is done. To run testing, execute the command npm test in the console. Test file is src\components\AppleGraph.test.jsx
-Below is an example of test results.
-![Example of test results]
-(/src/img/Spinner-test.jpg)
+Below is an example of test results. Example of test results are below
+![](/src/img/Spinner-test.jpg)
 
 ## Others
 This project was completed within 48 hours and can be rewritten in TypeScript with more time available.
@@ -77,5 +76,5 @@ This project was completed within 48 hours and can be rewritten in TypeScript wi
 I hope that this test assignment demonstrates a sufficient level of knowledge in React, JS, HTML, CSS, etc.<br>
 I am ready to answer any additional questions and look forward to your feedback.
 
-** With best regards**,<br>
+With best regards,<br>
 **Maksym Chukhrai**
