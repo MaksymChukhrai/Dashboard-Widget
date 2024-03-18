@@ -24,10 +24,12 @@ The library used for API requests is "axios": "^1.6.8".
 Since data for Microsoft and Nvidia graphs is imported directly from the local file 'src\data\stock_mkt_time_data.json', they do not require an API key.
 
 ## Formulas
-Calculation of percentage change in stock price compared to the previous analogous period is done using the following formula:
-(X2-X1)/X1 * 100%, where 
-X1 - 'close price' of the stock at the end of yesterday (or an analogous period, e.g., last week)
-X2 - 'close price' of the stock at the end of today.
+Calculation of percentage change in stock price compared to the previous analogous period is done using the following formula:<br>
+$$
+(X_2 - X_1) / X_1 \times 100\%
+$$, where <br>
+$X_1$ - 'close price' of the stock at the end of yesterday (or an analogous period, e.g., last week)<br>
+$X_2$ - 'close price' of the stock at the end of today.<br>
 The formula answers the question of how much the stock price has changed compared to the analogous period +/-%.
 
 ## Rendering Graphs
