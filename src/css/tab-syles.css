@@ -1,17 +1,16 @@
-@media screen and (min-width: 768px){
-    .graphics-container{
-        display:flex;
-        flex-direction: column;
-        gap:20px;
-    }
-    
-    .wrapper-container{
-        display:flex;
-        flex-direction: column;
-gap:20px
-    }
-    .nvidia{
-        margin-bottom: 50px;
-    }
+@media screen and (min-width: 768px) {
+  .graphics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
+  .wrapper-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nvidia {
+    margin-bottom: 50px;
+  }
 }

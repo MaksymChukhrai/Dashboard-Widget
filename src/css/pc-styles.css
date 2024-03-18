@@ -1,29 +1,24 @@
-@media screen and (min-width: 1400px){
-header{
-max-width: 1400px;
-margin: 0 auto; 
-}
-.graphics-container{
+@media screen and (min-width: 1400px) {
+  header {
     max-width: 1400px;
-    margin: 0 auto; 
-    gap:0px;
+    margin: 0 auto;
   }
-      .wrapper-container{
-      
-        flex-direction: row;
-        justify-content: center;
-        gap: 50px;
-      }
-.scroll-container{
+  .graphics-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 0px;
+  }
+  .wrapper-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+  .scroll-container {
     width: 660px;
-}
-.nvidia{
+  }
+  .nvidia {
     margin-top: 50px;
     margin-left: 15px;
     margin-bottom: 50px;
-}
-
-
-
-
+  }
 }
