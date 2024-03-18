@@ -66,7 +66,7 @@ To configure testing:
 - "@testing-library/user-event": "^13.5.0",
 
 Testing of the spinner functionality during data loading via the open API for IBM statistics is done. To run testing, execute the command npm test in the console. Test file is src\components\AppleGraph.test.jsx
-Below is an example of test results. Example of test results are below
+Below is an example of test results. <br>
 ![](/src/img/Spinner-test.jpg)
 
 ## Others
