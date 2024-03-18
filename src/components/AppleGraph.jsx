@@ -1,5 +1,5 @@
 // src\components\AppleGraph.jsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import loadingSpinner from '../img/loading.gif';
 import axios from 'axios';
 import {
