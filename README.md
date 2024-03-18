@@ -58,6 +58,7 @@ CSS files for styling are located in the src\css folder.
 ## Jest Testing
 Testing libraries used:
 - "jest": "^27.5.1",
+
 To configure testing:
 - "babel-jest": "^29.7.0",
 - "@testing-library/jest-dom": "^5.17.0",
@@ -66,13 +67,14 @@ To configure testing:
 
 Testing of the spinner functionality during data loading via the open API for IBM statistics is done. To run testing, execute the command npm test in the console. Test file is src\components\AppleGraph.test.jsx
 Below is an example of test results.
-![Example of test results](/src/img/Spinner-test.jpg)
+![Example of test results]<br>(/src/img/Spinner-test.jpg)
 
 ## Others
 This project was completed within 48 hours and can be rewritten in TypeScript with more time available.
 
 ## Contacts
-I hope that this test assignment demonstrates a sufficient level of knowledge in React, JS, HTML, CSS, etc.
+I hope that this test assignment demonstrates a sufficient level of knowledge in React, JS, HTML, CSS, etc.<br>
 I am ready to answer any additional questions and look forward to your feedback.
 
-Maksym Chukhrai
+**С наилучшими пожеланиями,**
+**Maksym Chukhrai**
