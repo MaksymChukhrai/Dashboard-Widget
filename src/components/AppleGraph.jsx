@@ -12,6 +12,7 @@ import {
   Tooltip,
   Filler,
   Legend,
+ 
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 // import stockData from '../data/stock_mkt_time_data.json'; 
@@ -25,7 +26,8 @@ ChartJS.register(
   Title,
   Tooltip,
   Filler,
-  Legend
+  Legend,
+
 );
 // const apiKey = 'J1R44VP8DQE7RMVO';
 
@@ -70,13 +72,15 @@ const [isError, setIsError] = useState(false);
   const last30DaysClosingPrices = last30DaysLabels.map(date => closingPricesByDate[date]);
      // Выбираем цены закрытия на конец периода (последний день)
      const latestDate = sortedLabels[sortedLabels.length - 1];
+     const currentDate = new Date();
+const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}.${(currentDate.getMonth() + 1).toString().padStart(2, '0')}.${currentDate.getFullYear()}`;
         // Update state with the formatted data
         setData({
           labels: last30DaysLabels,
           datasets: [
             {
               fill: true,
-              label: `Date: ${latestDate}`,
+              label: `Date: ${formattedDate}`,
               data: last30DaysClosingPrices,
               borderColor: '#e2a469',
               backgroundColor: 'rgba(254, 249, 243, 0.5)',
@@ -125,7 +129,7 @@ const options = {
     x: {
       title: {
         display: true,
-        text: 'Time',
+        text: 'Date',
       },
     },
     y: {
