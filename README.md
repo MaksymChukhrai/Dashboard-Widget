@@ -25,9 +25,8 @@ Since data for Microsoft and Nvidia graphs is imported directly from the local f
 
 ## Formulas
 Calculation of percentage change in stock price compared to the previous analogous period is done using the following formula:<br>
-$$
-(X_2 - X_1) / X_1 \times 100\%
-$$, where <br>
+
+($X_2$ - $X_1$) / $X_1$ * 100%, where <br>
 $X_1$ - 'close price' of the stock at the end of yesterday (or an analogous period, e.g., last week)<br>
 $X_2$ - 'close price' of the stock at the end of today.<br>
 The formula answers the question of how much the stock price has changed compared to the analogous period +/-%.
