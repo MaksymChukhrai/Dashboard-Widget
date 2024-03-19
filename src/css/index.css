@@ -36,6 +36,10 @@ header h2 {
   color: #36312b;
   margin: 20px 0;
 }
+header h2:hover,
+header p:hover{
+  color: #66605c;
+}
 
 .graphics-container {
   display: flex;
