@@ -26,7 +26,7 @@ function App() {
           </div>
         </div>
       </main>
-      <footer>{/* Код для подвала, если нужен */}</footer>
+      <footer></footer>
     </div>
   );
 }
