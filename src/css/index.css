@@ -78,10 +78,17 @@ header h2 {
 }
 .percent {
   font-family: "Inter", sans-serif;
-  color: red;
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 4px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
 }
 
 .spinner {

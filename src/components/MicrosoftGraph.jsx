@@ -1,5 +1,3 @@
-// src/components/MicrosoftGraph.jsx
-
 import React, { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
@@ -27,13 +25,26 @@ ChartJS.register(
 );
 
 const MicrosoftGraph = () => {
-  // Forming an array of labels for the X-axis (time)
-  const labels = stockData.Apple.times.map((time) => {
-    const date = new Date(time * 1000);
-    const hours = date.getHours().toString().padStart(2, "0"); // Add a leading zero if the number is less than 10
-    const minutes = date.getMinutes().toString().padStart(2, "0"); // Add a leading zero if the number of minutes is less than 10
-    return `${hours}:${minutes}`;
-  });
+  const [currentPrice, setCurrentPrice] = useState(0);
+  const [percentageChange, setPercentageChange] = useState(0);
+  const [percentageColor, setPercentageColor] = useState("red");
+
+  useEffect(() => {
+    const latestPrice =
+      stockData.Microsoft.prices[stockData.Microsoft.prices.length - 1];
+      const openPrice = stockData.Microsoft.prices[stockData.Microsoft.prices.length - 2];
+
+  
+    
+    const change = ((latestPrice - openPrice) / openPrice) * 100;
+    setCurrentPrice(latestPrice);
+    setPercentageChange(change);
+  
+    // Set color based on the change value
+    const color = change > 0 ? "green" : "red";
+    setPercentageColor(color);
+  }, []);
+
   const currentDate = new Date();
   const formattedDate = `${currentDate
     .getDate()
@@ -41,19 +52,6 @@ const MicrosoftGraph = () => {
     .padStart(2, "0")}.${(currentDate.getMonth() + 1)
     .toString()
     .padStart(2, "0")}.${currentDate.getFullYear()}`;
-
-  const data = {
-    labels,
-    datasets: [
-      {
-        fill: true,
-        label: `Date: ${formattedDate}`,
-        data: stockData.Microsoft.prices,
-        borderColor: "#786e79",
-        backgroundColor: "rgba(254, 249, 243, 0.5)",
-      },
-    ],
-  };
 
   const options = {
     responsive: true,
@@ -81,29 +79,37 @@ const MicrosoftGraph = () => {
       },
     },
   };
-  // States (useState and useEffect hooks) for current price and percentage change
-  const [currentPrice, setCurrentPrice] = useState(0);
-  const [percentageChange, setPercentageChange] = useState(0);
 
-  useEffect(() => {
-    // Calculate current price and percentage change
-    const latestPrice =
-      stockData.Microsoft.prices[stockData.Microsoft.prices.length - 1];
-    const openPrice = stockData.Microsoft.prices[0];
-    setCurrentPrice(latestPrice);
-    setPercentageChange(((latestPrice - openPrice) / openPrice) * 100);
-  }, []);
+  const data = {
+    labels: stockData.Apple.times.map((time) => {
+      const date = new Date(time * 1000);
+      const hours = date.getHours().toString().padStart(2, "0");
+      const minutes = date.getMinutes().toString().padStart(2, "0");
+      return `${hours}:${minutes}`;
+    }),
+    datasets: [
+      {
+        fill: true,
+        label: `Date: ${formattedDate}`,
+        data: stockData.Microsoft.prices,
+        borderColor: "#786e79",
+        backgroundColor: "rgba(254, 249, 243, 0.5)",
+      },
+    ],
+  };
 
   return (
     <div className="graf-container">
       <Line options={options} data={data} />
       <ul className="data-figures">
         <li>
-          Current price<span className="price">${currentPrice}</span>{" "}
+          Current price<span className="price">${currentPrice.toFixed(2)}</span>
         </li>
         <li>
           Percentage change{" "}
-          <span className="percent">{percentageChange.toFixed(2)}%</span>
+          <span className="percent" style={{ color: percentageColor }}>
+            {percentageChange.toFixed(2)}%
+          </span>
         </li>
       </ul>
     </div>

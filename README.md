@@ -29,7 +29,7 @@ Calculation of percentage change in stock price compared to the previous analogo
 ($X_2$ - $X_1$) / $X_1$ * 100%, where <br>
 $X_1$ - 'close price' of the stock at the end of yesterday (or an analogous period, e.g., last week)<br>
 $X_2$ - 'close price' of the stock at the end of today.<br>
-The formula answers the question of how much the stock price has changed compared to the analogous period +/-%.
+The formula answers the question of how much the stock price has changed compared to the analogous period +/-,%.
 
 ## Rendering Graphs
 The library used for rendering graphs is "react-chartjs-2": "^5.2.0".
