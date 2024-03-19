@@ -70,6 +70,10 @@ Testing of the spinner functionality during data loading via the open API for IB
 Below is an example of test results. <br>
 ![](/src/img/Spinner-test.jpg)
 
+## Google testing
+You can find the results of Google's code quality tests of this project here. 
+![PageSpeed Insights](https://pagespeed.web.dev/analysis/https-maksymchukhrai-github-io-Dashboard-Widget/ses61x513t?form_factor=desktop)
+
 ## Others
 This project was completed within 48 hours and can be rewritten in TypeScript with more time available.
 
