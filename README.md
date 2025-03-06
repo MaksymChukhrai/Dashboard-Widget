@@ -1,5 +1,3 @@
-## Take Home Test
-
 # Financial Dashboard Widget with US Stock
 
 ## Project Description
@@ -76,10 +74,3 @@ You can find the results of Google's code quality tests of this project here.
 
 ## Others
 This project was completed within 48 hours and can be rewritten in TypeScript with more time available.
-
-## Contacts
-I hope that this test assignment demonstrates a sufficient level of knowledge in React, JS, HTML, CSS, etc.<br>
-I am ready to answer any additional questions and look forward to your feedback.
-
-With best regards,<br>
-**Maksym Chukhrai**
