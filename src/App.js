@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Take Home Test:</p>
+        {/* <p>Take Home Test:</p> */}
         <h2>Financial Dashboard Widget with US Stock </h2>
       </header>
       <main>
