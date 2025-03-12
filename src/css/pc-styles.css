@@ -21,4 +21,10 @@
     margin-left: 15px;
     margin-bottom: 50px;
   }
+  .spinner {
+    position: absolute;
+    left: 48%;
+    top: 54%;
+
+  }
 }

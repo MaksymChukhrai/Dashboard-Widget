@@ -97,6 +97,8 @@ header p:hover{
 
 .spinner {
   position: absolute;
-  left: 45%;
-  top: 55%;
+  left: 44%;
+  top: 50%;
+  width: 80px;
+    height: 80px;
 }

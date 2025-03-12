@@ -33,6 +33,7 @@ const AppleGraph = () => {
   const [data, setData] = useState({});
   const [currentPrice, setCurrentPrice] = useState(0);
   const [percentageChange, setPercentageChange] = useState(0);
+  const [percentageColor, setPercentageColor] = useState("red");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -97,6 +98,10 @@ const AppleGraph = () => {
         const change = ((latestPrice - openPrice) / openPrice) * 100;
         setCurrentPrice(latestPrice);
         setPercentageChange(change);
+        
+        // Set color based on the change value
+        setPercentageColor(change > 0 ? "green" : "red");
+        
         setIsLoading(false); // Update boot status
       } catch (error) {
         setIsError(true); // Set error status
@@ -151,7 +156,9 @@ const AppleGraph = () => {
         </li>
         <li>
           Percentage change
-          <span className="percent">{percentageChange.toFixed(2)}%</span>
+          <span className="percent" style={{ color: percentageColor }}>
+            {percentageChange.toFixed(2)}%
+          </span>
         </li>
       </ul>
     </div>
