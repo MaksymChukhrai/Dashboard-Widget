@@ -100,7 +100,8 @@ const AppleGraph = () => {
         setPercentageChange(change);
         
         // Set color based on the change value
-        setPercentageColor(change > 0 ? "green" : "red");
+        const colorClass = change > 0 ? "green" : "red";
+        setPercentageColor(colorClass);
         
         setIsLoading(false); // Update boot status
       } catch (error) {
@@ -156,7 +157,7 @@ const AppleGraph = () => {
         </li>
         <li>
           Percentage change
-          <span className="percent" style={{ color: percentageColor }}>
+          <span className={`percent ${percentageColor}`}>
             {percentageChange.toFixed(2)}%
           </span>
         </li>

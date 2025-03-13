@@ -41,8 +41,8 @@ const NvidiaGraph = () => {
     setPercentageChange(change);
   
     // Set color based on the change value
-    const color = change > 0 ? "green" : "red";
-    setPercentageColor(color);
+    const colorClass = change > 0 ? "green" : "red";
+    setPercentageColor(colorClass);
   }, []);
 
   const currentDate = new Date();
@@ -107,7 +107,7 @@ const NvidiaGraph = () => {
         </li>
         <li>
           Percentage change{" "}
-          <span className="percent" style={{ color: percentageColor }}>
+          <span className={`percent ${percentageColor}`}>
             {percentageChange.toFixed(2)}%
           </span>
         </li>

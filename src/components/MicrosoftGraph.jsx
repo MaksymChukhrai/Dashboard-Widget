@@ -32,17 +32,16 @@ const MicrosoftGraph = () => {
   useEffect(() => {
     const latestPrice =
       stockData.Microsoft.prices[stockData.Microsoft.prices.length - 1];
-      const openPrice = stockData.Microsoft.prices[stockData.Microsoft.prices.length - 2];
+    const openPrice =
+      stockData.Microsoft.prices[stockData.Microsoft.prices.length - 2];
 
-  
-    
     const change = ((latestPrice - openPrice) / openPrice) * 100;
     setCurrentPrice(latestPrice);
     setPercentageChange(change);
-  
+
     // Set color based on the change value
-    const color = change > 0 ? "green" : "red";
-    setPercentageColor(color);
+    const colorClass = change > 0 ? "green" : "red";
+    setPercentageColor(colorClass);
   }, []);
 
   const currentDate = new Date();
@@ -107,7 +106,7 @@ const MicrosoftGraph = () => {
         </li>
         <li>
           Percentage change{" "}
-          <span className="percent" style={{ color: percentageColor }}>
+          <span className={`percent ${percentageColor}`}>
             {percentageChange.toFixed(2)}%
           </span>
         </li>
